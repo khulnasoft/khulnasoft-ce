@@ -41,6 +41,7 @@ Khulnasoft::Application.routes.draw do
     resources :team_members
     resources :issues
     resources :notes, :only => [:create, :destroy]
+    resources :builds, :only => [:index, :show, :create]
   end
   root :to => "projects#index"
 end

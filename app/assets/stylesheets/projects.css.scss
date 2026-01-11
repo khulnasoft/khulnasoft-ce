@@ -521,3 +521,35 @@ tbody tr:nth-child(2n) td, tbody tr.even td {
     width:400px;
   }
 }
+
+.label {
+  padding: 2px 4px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  @include round-borders-all(3px);
+
+  &.pending { background-color: #999; }
+  &.running { background-color: #3498db; }
+  &.success { background-color: #2ecc71; }
+  &.failed  { background-color: #e74c3c; }
+}
+
+.build-trace {
+  background: #222;
+  color: #eee;
+  padding: 15px;
+  overflow-x: auto;
+  font-family: monospace;
+  @include round-borders-all(4px);
+}
+
+.build-stats {
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  @include round-borders-all(4px);
+  strong { margin-left: 15px; }
+}

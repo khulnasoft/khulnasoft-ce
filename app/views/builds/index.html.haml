@@ -1,0 +1,35 @@
+- content_for :title do
+  = @project.name
+  \: Builds
+
+= render "projects/top_menu"
+
+.grid_12
+  .block-base
+    .view_header
+      %span.right
+        = form_tag project_builds_path(@project) do
+          = hidden_field_tag "build[branch]", "master"
+          = submit_tag "Run Build", :class => "grey-button"
+      Builds
+
+    .view_content
+      %table.common-table
+        %thead
+          %tr
+            %th Status
+            %th Commit
+            %th Branch
+            %th Created
+            %th Finished
+        %tbody
+          - @builds.each do |build|
+            %tr
+              %td
+                %span{:class => "label #{build.status}"}= build.status.upcase
+              %td= link_to build.commit_sha[0..8] || "N/A", project_build_path(@project, build)
+              %td= build.branch
+              %td= build.created_at.stamp("12 Jan 2011 20:00")
+              %td= build.finished_at ? build.finished_at.to_time.stamp("12 Jan 2011 20:00") : "---"
+
+      = will_paginate @builds

@@ -1,0 +1,2 @@
+app:
+  image: khulnasoft/khulnasoft-ce:latest

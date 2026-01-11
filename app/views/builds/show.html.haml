@@ -1,0 +1,21 @@
+- content_for :title do
+  = @project.name
+  \: Build ##{@build.id}
+
+= render "projects/top_menu"
+
+.grid_12
+  .block-base
+    .view_header
+      Build ##{@build.id} logs
+
+    .view_content
+      .build-stats
+        %span.label{:class => @build.status}= @build.status.upcase
+        %strong Commit:
+        = @build.commit_sha
+        %strong Branch:
+        = @build.branch
+
+      %pre.build-trace
+        = @build.trace || "No logs yet..."

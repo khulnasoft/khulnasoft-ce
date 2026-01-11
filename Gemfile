@@ -23,6 +23,10 @@ gem 'lockfile', '~> 2.1.0'
 gem 'inifile', '~> 2.0.2'
 gem 'net-ssh', '~> 2.9.4'
 
+# Background Workers
+gem 'sidekiq', '~> 2.17.7' # Version compatible with older Ruby/Rails
+gem 'redis', '~> 3.0.7'
+
 # Pagination (DO NOT use both will_paginate + kaminari)
 # gem 'kaminari' ❌ REMOVED
 
