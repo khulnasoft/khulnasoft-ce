@@ -13,11 +13,11 @@ gem "carrierwave"
 gem 'six'
 gem 'therubyracer'
 gem 'faker'
-gem 'seed-fu', :branch => 'rails-3-1', :git => 'git://github.com/mbleigh/seed-fu.git'
+
 gem "lockfile"
 gem "inifile"
 gem "net-ssh"
-gem "albino", :git => "git://github.com/randx/albino.git"
+
 gem "kaminari"
 
 group :assets do
@@ -28,7 +28,7 @@ end
 
 group :development do 
   gem 'rails-footnotes', '>= 3.7.5.rc4'
-  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+
 end
 
 group :development, :test do
